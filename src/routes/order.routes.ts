@@ -8,11 +8,11 @@ const orderRoutes = (container: AwilixContainer): Router => {
     const router = Router();
     const orderController = container.resolve("orderController") as OrderController;
     
-    router.post("/create", validateCreateOrder, ...defaultRole(orderController.createOrder, ["school", "test"]));
-    router.patch("/update", validateUpdateOrder, ...defaultRole(orderController.updateOrder, ["test"]));
-    router.get("/list", ...defaultRole(orderController.listOrders, ["school", "test"]));
-    router.patch("/archive-order", ...defaultRole(orderController.archiveOrder, ["test"]));
-    router.delete("/remove-order", ...defaultRole(orderController.removeOrder, ["test"]));
+    router.post("", validateCreateOrder, ...defaultRole(orderController.createOrder, ["school", "test"]));
+    router.patch("", validateUpdateOrder, ...defaultRole(orderController.updateOrder, ["test"]));
+    router.get("", ...defaultRole(orderController.listOrders, ["school", "test"]));
+    router.patch("/archive", ...defaultRole(orderController.archiveOrder, ["test"]));
+    router.delete("", ...defaultRole(orderController.removeOrder, ["test"]));
 
     return router;
   };

@@ -1,10 +1,10 @@
 export class AppError extends Error {
-    public statusCode: number;
+    public status_code: number;
     public exposeError: boolean;
   
-    constructor(message: string, statusCode: number, exposeError: boolean = false) {
+    constructor(message: string, status_code: number, exposeError: boolean = false) {
       super(message);
-      this.statusCode = statusCode;
+      this.status_code = status_code;
       this.exposeError = exposeError; 
       Error.captureStackTrace(this, this.constructor);
     }

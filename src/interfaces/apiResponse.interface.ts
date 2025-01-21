@@ -1,6 +1,6 @@
 export interface ApiResponse {
     success: boolean;
-    statusCode: number;
+    status_code: number;
     message: string;
     data?: ApiResponseData;
     error?: any;

@@ -5,11 +5,11 @@ export const successResponse = (
     res: Response,
     message: string,
     data: any = null,
-    statusCode: number = 200
+    status_code: number = 200
 ): Response<ApiResponse> => {
-    return res.status(statusCode).json({
+    return res.status(status_code).json({
         success: true,
-        statusCode,
+        status_code,
         message,
         ...(data && { data }),
     });
@@ -18,12 +18,12 @@ export const successResponse = (
 export const errorResponse = (
     res: Response,
     message: string,
-    statusCode: number,
+    status_code: number,
     error: any = null
 ): Response<ApiResponse> => {
     const response: ApiResponse = {
         success: false,
-        statusCode,
+        status_code,
         message,
     };
 
@@ -32,5 +32,5 @@ export const errorResponse = (
         response.error = error;
     }
 
-    return res.status(statusCode).json(response);
+    return res.status(status_code).json(response);
 };

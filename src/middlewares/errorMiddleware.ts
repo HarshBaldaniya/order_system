@@ -14,7 +14,7 @@ export const errorMiddleware = (
         const errorDetails = error.exposeError ? error.message : null;
 
         // Handle known application errors
-        errorResponse(res, error.message, error.statusCode, errorDetails);
+        errorResponse(res, error.message, error.status_code, errorDetails);
     } else {
         // Log unexpected errors for debugging purposes
         logger.error("Unexpected Error:", error);
